@@ -15,11 +15,11 @@ PLAYED = "played"
 class Guess:
     def __init__(self):
         self.curr_game = Game(get_random_word()) # This will fetch a new word
-        self.round = []
+        self.rounds = []
         self.set_round()
 
     def set_round(self):
-        self.round.append(self.curr_game)
+        self.rounds.append(self.curr_game)
     
     def reset(self):
         self.calculate_score()
@@ -95,11 +95,15 @@ class Guess:
 
 
     def try_letter(self):
+    
         letter_guessed = input("Enter a letter: ").lower()
+
+        while len(letter_guessed) != 1 or not letter_guessed.isalpha():
+            letter_guessed = input("Enter a letter: ").lower()
+           
         if letter_guessed in self.curr_game.current_word:
-            print("@@\n"+
-                  "@@ FEEDBACK: Woo hoo, you found 1 letters\n"+
-                  "@@")
+            count = self.curr_game.current_word.count(letter_guessed)
+            print(f"@@\n@@ FEEDBACK: Woo hoo, you found {count} letters\n@@")
             self.curr_game.letters_guessed.append(''.join(letter_guessed))
 
             for index , curr in enumerate(self.curr_game.current_word):
@@ -135,7 +139,7 @@ class Guess:
         ))
         print("-" * 60)
         total_score = 0
-        for i, game in enumerate(self.round, start=1):
+        for i, game in enumerate(self.rounds, start=1):
                 if game.is_played == True:
                     print("{:<5} {:<6} {:<8} {:<13} {:<15} {:>5.2f}".format(
                         i,

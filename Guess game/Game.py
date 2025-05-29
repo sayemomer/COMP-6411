@@ -12,7 +12,7 @@ class Game:
         self.bad_guesses = 0
         self.missed_letters =0
         self.score = 0
-        self.is_played = bool
+        self.is_played = False
 
     def set_status(self,status):
         self.status = status

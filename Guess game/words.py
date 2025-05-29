@@ -23,7 +23,7 @@ if __name__ == "__main__":
         else:
             print("Invalid Option")
     else:
-        print("Invalid perameters")
+        print("Invalid parameters")
 
 
 
