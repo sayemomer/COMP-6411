@@ -4,14 +4,13 @@
   (:require [compress :as compress]))
   ; this is where you would also include/require the compress module
 
-(def freq-map (compress/load-frequency-map "frequency.txt"))
+(def freq-map (compress/loadFrequencyMap "frequency.txt"))
 
 ; Display the menu and ask the user for the option
 (defn showMenu
   []
   (println "\n\n*** Compression Menu ***")
   (println "------------------\n")
-  (println "*****")
   (println "1. Display list of files")
   (println "2. Display file contents")
   (println "3. Compress a file")
@@ -54,7 +53,7 @@
   (print "\nPlease enter a file name => ")
   (flush)
   (let [file_name (read-line)]
-    (compress/compress-file file_name freq-map)))
+    (compress/compressFile file_name freq-map)))
 
 
 ; Decompress the (valid) file provided by the user. You will replace the println expression with code 
@@ -64,7 +63,7 @@
   (print "\nPlease enter a file name => ")
   (flush)
   (let [file_name (read-line)]
-    (compress/decompress-file file_name freq-map)))
+    (compress/decompressFile file_name freq-map)))
 
 
 ; If the menu selection is valid, call the relevant function to 
