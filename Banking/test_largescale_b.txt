@@ -1,0 +1,8 @@
+{bankofamerica,1500}.
+{chasebank,1200}.
+{wellsfargo,1000}.
+{citibank,800}.
+{usbank,600}.
+{pncbank,500}.
+{capitalbank,400}.
+{trustbank,300}. 

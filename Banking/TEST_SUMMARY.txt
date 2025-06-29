@@ -1,0 +1,57 @@
+ERLANG BANKING SIMULATION - AVAILABLE TESTS
+
+=== BASIC TESTS ===
+1. test_basic_* - Basic functionality test
+   - 3 customers wanting 450 total
+   - 3 banks with 750 total
+   - Expected: All customers satisfied
+
+2. test_minimal_* - Single customer, single bank
+   - 1 customer wanting 100
+   - 1 bank with 150
+   - Expected: Customer gets full amount
+
+3. test_perfectmatch_* - Exact match scenario
+   - 1 customer wanting 500
+   - 1 bank with exactly 500
+   - Expected: Customer gets all, bank has 0
+
+=== STRESS TESTS ===
+4. test_largescale_* - Many customers and banks
+   - 15 customers wanting ~3,840 total
+   - 8 banks with 6,300 total
+   - Expected: All customers satisfied
+
+5. test_highdemand_* - High demand, limited supply
+   - 5 customers wanting 16,000 total
+   - 3 banks with only 2,800 total
+   - Expected: Competition for limited funds
+
+=== EDGE CASES ===
+6. test_bigloan_* - One customer wants huge amount
+   - billionaire(25000), student(50), worker(200)
+   - 4 banks with 12,150 total
+   - Expected: Unequal distribution
+
+7. test_insufficient_* - Severe fund shortage
+   - 4 customers wanting 1,150 total
+   - 3 banks with only 230 total
+   - Expected: Most customers unsatisfied
+
+=== ORIGINAL TESTS ===
+8. c1.txt + b1.txt - Original sample test
+   - sam(200), james(300), karen(200)
+   - apple(100), knox(200), nova(300)
+
+=== HOW TO RUN ===
+All tests: ./run_tests.sh
+Single test: ./quick_test.sh <customer_file> <bank_file>
+Manual: erlc *.erl && erl -noshell -run money start <c_file> <b_file> -s init stop
+
+=== VALIDATION CHECKLIST ===
+✓ Total received = Total loaned
+✓ No customer receives more than objective
+✓ No bank balance goes negative
+✓ Program terminates cleanly
+✓ Transaction log format correct
+✓ Every request has corresponding response 

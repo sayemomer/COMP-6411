@@ -1,0 +1,3 @@
+{smallbank1,100}.
+{smallbank2,80}.
+{smallbank3,50}. 

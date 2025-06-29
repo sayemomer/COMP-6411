@@ -1,0 +1,15 @@
+{alex,250}.
+{beth,180}.
+{carl,320}.
+{dana,150}.
+{evan,400}.
+{fiona,275}.
+{greg,190}.
+{helen,300}.
+{ivan,225}.
+{jane,350}.
+{kevin,175}.
+{laura,290}.
+{mark,160}.
+{nancy,380}.
+{oscar,210}. 

@@ -1,0 +1,4 @@
+{richbank,10000}.
+{mediumbank,2000}.
+{poorbank,100}.
+{tinybank,50}. 

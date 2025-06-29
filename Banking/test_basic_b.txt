@@ -1,0 +1,3 @@
+{citybank,200}.
+{westbank,300}.
+{eastbank,250}. 

@@ -1,0 +1,3 @@
+{megabank,2000}.
+{minibank,500}.
+{smallbank,300}. 
